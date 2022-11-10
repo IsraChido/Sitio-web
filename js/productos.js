@@ -37,7 +37,7 @@ function mostrarTodo(){
                 "<h1>"+ childData.nombre+" "+"$"+childData.precio+"/l"+"</h1>"+
                 "<img src='"+childData.url+"' alt='"+childData.imgNombre+"'>"+
                 "</center>"+
-                "<h1>"+childData.descripcion+"</h1>"+
+                "<h2>"+childData.descripcion+"</h2>"+
                 "</div>"+
                 "</div>"
 

@@ -35,7 +35,7 @@ signInWithEmailAndPassword(auth, email, password)
 
         
     })
-    window.location.href = "/sitioWeb/html/administrador.html" 
+    window.location.href = "/html/administrador.html" 
     alert("Ingreso exitoso");
     
   })
@@ -45,4 +45,3 @@ signInWithEmailAndPassword(auth, email, password)
     alert("Hubo un error" + errorMessage);
   });
 })
-

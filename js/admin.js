@@ -63,21 +63,25 @@ function leerInputs() {
   
 function guardar() {
     leerInputs();
-    set(ref(db,'productos/' + codigo),{
-        nombre:nombre,
-        descripcion:descripcion,
-        precio:precio,
-        url:url,
-        estado:estado="0",
-        imgNombre:imgNombre
-    }).then((docRef)=>{
-        alert("Se agregó el producto con éxito");
-  
-    }).catch((error)=>{
-  
-        alert("Surgió un eror " + error);
-  
-    })
+    if(document.getElementById('codigo').value == 0 || document.getElementById('nombre').value == 0 || document.getElementById('precio').value == 0 || document.getElementById('descripcion').value == 0 || document.getElementById('url').value ==0 || document.getElementById('imgNombre').value == 0){
+        alert("Te falta seleccionar un campo")
+    }else{
+        set(ref(db,'productos/' + codigo),{
+            nombre:nombre,
+            descripcion:descripcion,
+            precio:precio,
+            url:url,
+            estado:estado="0",
+            imgNombre:imgNombre
+        }).then((docRef)=>{
+            alert("Se agregó el producto con éxito");
+            consultar();
+        }).catch((error)=>{
+
+            alert("Surgió un eror " + error);
+
+        })
+    }
 }
 
 function consultar(){
@@ -113,17 +117,21 @@ function consultar(){
 
 function actualizar(){
     leerInputs();
-    update(ref(db,'productos/' + codigo), {
-        nombre:nombre,
-        descripcion:descripcion,
-        precio:precio,
-        url:url,
-        estado:estado
-    }).then(()=>{
-        alert("Se realizó la actualización");
-    }).catch(()=>{
-        alert("Surgió un error " + error);
-    })
+    if(document.getElementById('codigo').value == 0 || document.getElementById('nombre').value == 0 || document.getElementById('precio').value == 0 || document.getElementById('descripcion').value == 0 || document.getElementById('url').value ==0 || document.getElementById('imgNombre').value == 0){
+        alert("Te falta seleccionar un campo")
+    }else{
+        update(ref(db,'productos/' + codigo), {
+            nombre:nombre,
+            descripcion:descripcion,
+            precio:precio,
+            url:url,
+            estado:estado
+        }).then(()=>{
+            alert("Se realizó la actualización");
+        }).catch(()=>{
+            alert("Surgió un error " + error);
+        })
+    }
 }
 
 function deshabilitar(){
@@ -233,8 +241,9 @@ function limpiar(){
     precio = "";
     url = "";
     estado = "";
-    imagenCambio.innerHTML = `<img src="/Firebase/img/alumno.png" alt="" id="imagen"></img>`
+    imagenCambio.innerHTML = `<img src="/img/nievesHeader.jpg" alt="" id="imagen"></img>`
     imgNombre = "";
+    mostrarDatos.innerHTML = "";
     escribirInputs();
 }
 
@@ -254,15 +263,13 @@ function mostrarTodo(){
             "<h1>" + childKey + "</h1>"+
             "<h1>"+ childData.nombre+"</h1>"+
             "<img src='"+childData.url+"' alt='"+childData.imgNombre+"'>"+
-            "<p class='PP'>"+childData.precio+"</p>"+
-            "<p class='PP'>"+childData.descripcion+"</p>"+
-            "<p class='PP'>"+childData.estado+"</p>"+
+            "<p>"+childData.precio+"</p>"+
+            "<p>"+childData.descripcion+"</p>"+
+            "<p>"+childData.estado+"</p>"+
             "</div>"+
             "</div>"
 
         });
-    }, {
-        onlyOnce: true
     });
 }
 
