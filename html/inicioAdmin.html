@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heladería Jiménez :: Login</title>
+    <link rel="stylesheet" href="/sitioWeb/css/sitio.css">
+    <script src="/sitioWeb/js/autenticacion.js" type="module"></script>
+    <script src="/sitioWeb/js/limpiar.js"></script>
+</head>
+<body style="background-color: rgb(233, 122, 122);">
+    <header>
+        <h1>Login</h1>
+    </header>
+    <section>
+        <center>
+            <input type="email" name="email" id="email" required="true" placeholder="Correo del administrador" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            <br>
+            <br>
+            <input type="password" name="password" id="password" required="true" placeholder="Contraseña del administrador">
+            <br>
+            <br>
+            <input class="botones" name="login" id="login" type="submit" value="Ingresar">
+            <input class="botones" name="limpiar" id="limpiar" type="reset" value="Limpiar" onclick="limpiar()"></button>
+        </center>
+    </section>
+    <footer>
+        <h4>
+            Heladería Jiménez, todos los derechos reservados ©
+        </h4>
+    </footer>
+</body>
+</html>
