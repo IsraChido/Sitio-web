@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heladería Jiménez :: Administrador</title>
+    <link rel="stylesheet" href="/sitioWeb/css/sitio.css">
+    <script src="/sitioWeb/js/limpiar.js"></script>
+    <script src="/sitioWeb/js/admin.js" type="module"></script>
+</head>
+<body style="background-color: rgb(233, 122, 122);">
+    <header>
+        <h1>Administrador</h1>
+    </header>
+    <nav>
+        <div id="a">
+            <input type="text" name="codigo" id="codigo" placeholder="Código" required="true">
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required="true">
+            <input type="text" name="descripcion" id="descripcion" placeholder="Descripción" required="true">
+            <input type="number" name="precio" id="precio" placeholder="Precio" required="true">
+            <input type="url" name="url" id="url" placeholder="URL" readonly="true" disabled="true">
+            <input type="text" name="estado" id="estado" placeholder="Estado" disabled="true">
+            <input type="text" name="imgNombre" id="imgNombre" placeholder="Nombre de la imagen" disabled="true">
+            <input type="file" name="archivo" id="archivo" accept=".jpg, .jpeg, .png">
+        </div>
+    </nav>
+    <section>
+        <center>
+            <div id="imagenAdmin">
+                <img src="/Firebase/img/alumno.png" alt="" id="imagen">
+            </div>
+            <br>
+            <hr>
+            <br>
+            <input type="button" name="guardar" id="guardar" value="Guardar">
+            <input type="button" name="actualizar" id="actualizar" value="Actualizar">
+            <input type="button" name="consultar" id="consultar" value="Consultar">
+            <input type="button" name="deshabilitar" id="deshabilitar" value="Deshabilitar">
+            <input type="button" name="habilitar" id="habilitar" value="Habilitar">
+            <input type="button" name="verImagen" id="verImagen" value="Mostrar imagen">
+            <input type="button" name="limpiar" id="limpiar" value="Limpiar">
+            <input type="button" name="todo" id="todo" value="Mostrar todo">
+        </center>
+    </section>
+    <center>
+        <section id="mostrarTodo" onload="mostrarTodo()" class="row">
+
+        </section>
+    </center>
+    <footer>
+        <h4>
+            Heladería Jiménez, todos los derechos reservados ©
+        </h4>
+    </footer>
+</body>
+</html>
